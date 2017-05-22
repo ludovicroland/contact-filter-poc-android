@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener, MenuIt
       val builder = StringBuilder(name)
       builder.append("\n")
       phones.forEach {
-        builder.append(it).append(" | ")
+        builder.append(it).append("\n")
       }
 
       return builder.toString()
