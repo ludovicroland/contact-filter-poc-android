@@ -8,6 +8,7 @@ import android.provider.ContactsContract.CommonDataKinds.Phone
 import android.support.v4.view.MenuItemCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
+import android.telephony.PhoneNumberUtils
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -101,7 +102,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener, MenuIt
             {
               do
               {
-                phoneNumbers.add(phoneCursor.getString(phoneCursor.getColumnIndex(Phone.NUMBER)))
+                phoneNumbers.add(PhoneNumberUtils.normalizeNumber(phoneCursor.getString(phoneCursor.getColumnIndex(Phone.NUMBER))))
               }
               while (phoneCursor.moveToNext() === true)
             }
